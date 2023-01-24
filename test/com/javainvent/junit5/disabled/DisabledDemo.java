@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import com.javainvent.junit5.bookstore.model.Book;
 import com.javainvent.junit5.bookstore.service.BookService;
 
-@Disabled
+@Disabled  // will disable all test cases
 public class DisabledDemo {
 	@Test
 	@Disabled("skip until #98 issue has been fixed")
