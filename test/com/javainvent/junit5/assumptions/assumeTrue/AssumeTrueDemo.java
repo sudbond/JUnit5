@@ -28,5 +28,26 @@ public class AssumeTrueDemo {
 		System.out.println("Assumption passed !!!");
 		assertEquals(3, 2 + 1);
 	}
+	
+	@Test
+	public void assumeTrueWithBooleanSupplierAndNoMessage() {
+		assumeTrue(()->"DEV".equals(System.getProperty("ENV")));
+		System.out.println("Assumption passed !!!");
+		assertEquals(3, 2 + 1);
+	}
+
+	@Test
+	public void assumeTrueWithBooleanSupplierAndMessage() {
+		assumeTrue(()->"DEV".equals(System.getProperty("ENV")), "Assumption Failed!!!");
+		System.out.println("Assumption passed !!!");
+		assertEquals(3, 2 + 1);
+	}
+	
+	@Test
+	public void assumeTrueWithBooleanSupplierAndMessageSupplier() {
+		assumeTrue(()->"DEV".equals(System.getProperty("ENV")), ()->"Assumption Failed!!!");
+		System.out.println("Assumption passed !!!");
+		assertEquals(3, 2 + 1);
+	}
 
 }
